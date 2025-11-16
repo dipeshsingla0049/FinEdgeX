@@ -1,0 +1,1112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+}
+body {
+    color: #222;
+    background-color: white;
+    line-height: 1.6;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #0f172a;
+    color: white;
+    top: 0;
+}
+.logo img{
+    height: 45px;
+    width: auto;
+}
+.nav-links a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration:none;
+  font-weight: 500;
+}
+.nav-links a:hover {
+  color: yellowgreen;
+}
+.btn-login {
+  background-color:#38bdf8 ;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-login:hover {
+  background-color: #0284c7;
+  color: white;
+  transform: translateZ(-20px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #e0f2fe, #f0f9ff);
+}
+.hero-content {
+    max-width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    color: #334155;
+    margin-bottom: 20px;
+}
+.btn-primary {
+  background-color: #0ea5e9;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: auto;
+}
+.hero-image img {
+  width: 450px;
+  border-radius: 12px;
+}
+.features {
+    padding: 4rem 2rem;
+    background-color: #f8fafc;
+    text-align: center;
+}
+.features h2 {
+    margin-bottom: 3rem;
+}
+.feature-cards {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.feature {
+    background-color: wheat;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(139, 115, 85, 0.3);
+    transition: transform 0.3s ease;
+}
+.feature:hover {
+    transform: translateZ(-20px) scale(1.05);
+}
+.feature h3 {
+    margin-bottom: 1rem;
+}
+.feature p {
+    color: #475569;
+    font-size: 1rem;
+}
+.footer {
+    background-color: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 0rem;
+}
+.footer p {
+    margin: 0;
+}
+#email {
+    color: blanchedalmond;
+}
+
+.converter {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #f1f5f9;
+}
+
+.converter h1 {
+  font-size: 2rem;
+  color: #0f172a;
+}
+
+.converter p {
+  margin-top: 0.5rem;
+  color: #334155;
+}
+
+.converter-box {
+  background: white;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.input-group select,
+.input-group input {
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #0ea5e9;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #0284c7;
+}
+
+
+.payments {
+  padding: 3rem 2rem;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.payments h1 {
+  font-size: 2rem;
+  color: #0f172a;
+}
+
+.payments p {
+  margin-top: 0.5rem;
+  color: #334155;
+}
+
+/* Full-screen background image for payments section */
+.payments {
+  position: relative;
+  overflow: visible;
+}
+
+.payments::before {
+  content: "";
+  position: fixed;
+  inset: 0; /* cover entire viewport */
+  background-image: url('payment.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.18; /* adjust visibility */
+  pointer-events: none;
+  z-index: 0;
+  transform: translateZ(0);
+}
+
+/* subtle overlay above the bg image for legibility */
+.payments::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6, 18, 36, 0.18), rgba(255,255,255,0.02));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Keep payments content and navbar above the background */
+.payments > * { position: relative; z-index: 2; }
+.navbar { position: relative; z-index: 3; }
+
+/* Hide inline image so it doesn't duplicate the background */
+.payment-info .payment-image { display: none !important; }
+
+/* Payments — visual polish (scoped to .payments only) */
+.payments::after {
+  /* subtle overlay between background image and content for legibility */
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6, 18, 36, 0.22), rgba(255,255,255,0.02));
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: normal;
+}
+
+.payments h1 {
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  color: #041627;
+}
+
+.payment-info, .payment-form {
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Slight lift animation for cards */
+.payment-info, .payment-form {
+  transform: translateY(6px);
+  opacity: 0;
+  animation: paymentsFloatIn 420ms ease-out forwards;
+}
+@keyframes paymentsFloatIn {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Tighter list items with icon badges */
+.payment-info ul { display: grid; gap: 0.6rem; grid-template-columns: 1fr; }
+.payment-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.45rem 0;
+}
+.payment-info li::before {
+  content: ""; /* small circular accent */
+  width: 10px;
+  height: 10px;
+  margin-top: 6px;
+  background: linear-gradient(135deg, #0ea5e9, #10b981);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Make form sections visually grouped */
+.payment-form h4 {
+  background: linear-gradient(90deg, rgba(14,165,233,0.06), rgba(16,185,129,0.03));
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #084757;
+  margin-bottom: 0.6rem;
+}
+
+/* Make labels slightly lighter and inputs more pronounced */
+.payment-form label { color: #0f172a; opacity: 0.85; }
+.payment-form input, .payment-form select { border-color: rgba(6, 24, 43, 0.06); }
+
+/* CTA: stronger subtle glow */
+.payment-form .btn-primary {
+  box-shadow: 0 18px 44px rgba(14,165,233,0.12), 0 4px 12px rgba(16,185,129,0.06);
+}
+
+/* Reduce background prominence on small devices so content stays readable */
+@media (max-width: 700px) {
+  .payments::before { opacity: 0.12; background-position: center top; background-size: cover; }
+  .payments::after { background: linear-gradient(180deg, rgba(6,18,36,0.28), rgba(255,255,255,0.06)); }
+}
+
+/* Layout */
+.payment-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.payments .why-choose {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto 1.75rem auto; /* center and add space below */
+  box-sizing: border-box;
+}
+
+/* Center the payment container and keep it aligned under the why-choose card */
+.payments .payment-container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto 2.5rem auto;
+  box-sizing: border-box;
+  /* keep existing layout but ensure children align nicely */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Make the form stack full-width under the info section on small screens */
+@media (max-width: 980px) {
+  .payments .payment-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .payments .payment-form,
+  .payments .payment-info {
+    width: 100%;
+  }
+}
+
+/* Small visual spacing adjustment so the why-choose card doesn't overlap the fixed background overlay */
+.payments .why-choose { position: relative; z-index: 2; }
+
+/* ...existing code... */
+.investment {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.investment h1 {
+  font-size: 2rem;
+  color: #0f172a;
+}
+
+.investment p {
+  margin-top: 0.5rem;
+  color: #334155;
+}
+
+/* Styled section heading icon for investment page */
+.investment h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  font-size: 2.2rem;
+}
+.investment .section-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #e6f6ff, #d3f0ff);
+  box-shadow: 0 14px 32px rgba(2,6,23,0.08);
+  font-size: 1.8rem;
+  transform: translateY(-1px);
+}
+.investment .section-title {
+  font-weight: 700;
+  color: #072033;
+}
+@media (max-width: 480px) {
+  .investment h1 { font-size: 1.4rem; gap: 0.6rem; }
+  .investment .section-icon { width: 48px; height: 48px; font-size: 1.3rem; border-radius: 10px; }
+}
+
+/* Container */
+.investment-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+/* Form Section */
+.planner-form {
+  flex: 1;
+  min-width: 300px;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.planner-form h3 {
+  margin-bottom: 1.5rem;
+  color: #0ea5e9;
+}
+
+.planner-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.planner-form input,
+.planner-form select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+}
+
+.planner-form input:focus,
+.planner-form select:focus {
+  border-color: #0ea5e9;
+  outline: none;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.9rem;
+  background: #0ea5e9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #0284c7;
+}
+
+/* AI Results Section */
+.ai-results {
+  flex: 1;
+  min-width: 320px;
+  background: #f1f5f9;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.ai-results h3 {
+  color: #0ea5e9;
+  margin-bottom: 1rem;
+}
+
+#aiOutput {
+  color: #1e293b;
+  line-height: 1.7;
+}
+
+.budget {
+  background: #f8fafc;
+  padding: 4rem 2rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+.budget h1 {
+  font-size: 2.2rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+#budget-description {
+  color: #475569;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Layout Container */
+.budget-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Common Card Style */
+.budget-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  text-align: left;
+  flex: 1 1 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid transparent;
+}
+
+.budget-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Section-specific colors */
+.income {
+  border-top-color: #0ea5e9;
+}
+
+.expenses {
+  border-top-color: #fb923c;
+}
+
+.ai-plan {
+  border-top-color: #10b981;
+}
+
+/* Titles */
+.budget-card h2 {
+  color: #0f172a;
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.budget-card p {
+  color: #334155;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Inputs */
+.budget-card input[type="number"] {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.budget-card input[type="number"]:focus {
+  border-color: #0ea5e9;
+  outline: none;
+}
+
+/* Expense Options */
+.expense-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.expense-options label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #1e293b;
+  background: #f8fafc;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.expense-options label:hover {
+  background: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+.expense-options input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0ea5e9;
+}
+
+/* AI Generated Plan Box */
+.ai-plan textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  font-size: 0.95rem;
+  color: #1e293b;
+  resize: none;
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.3s;
+}
+
+.ai-plan textarea:focus {
+  border-color: #10b981;
+  outline: none;
+}
+
+/* New textarea for AI plan (read-only look) */
+.ai-plan-textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #e6eef8;
+  background: #fbfdff;
+  color: #0f172a;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 160px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+  margin-bottom: 1rem;
+}
+
+.ai-plan-textarea[readonly] {
+  opacity: 1; 
+}
+
+/* Button */
+.btn-generate {
+  display: inline-block;
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(90deg, #0ea5e9, #10b981);
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-generate:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* Enhanced About page styles to match 1.png / 2.png */
+.about{
+  padding: 4rem 1rem;
+  background: linear-gradient(180deg, #f7fbff 0%, #ffffff 60%);
+}
+.about h1{
+  font-size: 2.8rem;
+  letter-spacing: -0.5px;
+  color: #08203a;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+.subtitle{
+  font-size: 1.05rem;
+  color: #556677;
+  margin-bottom: 2rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid container for the cards */
+.about-grid {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto 2.5rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  align-items: start;
+}
+.about-grid {
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-card .icon,
+.about-card h2 {
+  flex: 0 0 auto;
+}
+.about-card p {
+  flex: 1 1 auto;
+  margin-bottom: 0.6rem;
+}
+
+.about-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border-radius: 14px;
+  padding: 1.6rem 1.75rem;
+  box-shadow: 0 12px 30px rgba(6, 22, 37, 0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.about-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 22px 46px rgba(6, 22, 37, 0.10);
+}
+.about-card h2{
+  font-size: 1.15rem;
+  color: #072033;
+  margin: 0;
+}
+.about-card p{
+  color: #445566;
+  line-height: 1.65;
+  margin: 0;
+}
+.icon{
+  width: 64px;
+  height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px; 
+  color: #072033;
+  box-shadow: 0 10px 26px rgba(2, 6, 23, 0.07);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  margin-bottom: 0.6rem;
+}
+
+.about-card:hover .icon {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 20px 46px rgba(2, 6, 23, 0.12);
+}
+.about-card .icon img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+.about-grid .about-card:nth-child(1) .icon {
+  background: linear-gradient(135deg, #e6f6ff 0%, #d3f0ff 100%);
+  color: #05304a;
+}
+.about-grid .about-card:nth-child(2) .icon {
+  background: linear-gradient(135deg, #fff4e6 0%, #ffe6cc 100%);
+  color: #5a2e00;
+}
+.about-grid .about-card:nth-child(3) .icon {
+  background: linear-gradient(135deg, #f0fff6 0%, #e6ffef 100%);
+  color: #05402a;
+}
+.about-grid .about-card:nth-child(4) .icon {
+  background: linear-gradient(135deg, #f3f0ff 0%, #ece6ff 100%);
+  color: #24104f;
+}
+.about-grid .about-card:nth-child(5) .icon {
+  background: linear-gradient(135deg, #f0fff7 0%, #e6fff0 100%);
+  color: #053826;
+}
+
+/* Optional: make icon text slightly bolder for clarity */
+.about-card .icon { font-weight: 700; }
+/* Make the "Why Choose" section match the About cards visually */
+.why-choose {
+  /* use same card look as .about-card */
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: flex-start;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border-radius: 14px;
+  padding: 1.6rem 1.75rem;
+  box-shadow: 0 12px 30px rgba(6, 22, 37, 0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto 3rem auto;
+}
+
+.why-choose h2 {
+  font-size: 1.15rem;
+  color: #072033;
+  margin: 0 0 0.25rem 0;
+}
+
+.why-choose ul {
+  padding-left: 1.15rem;
+  margin: 0.4rem 0 0 0;
+}
+
+.why-choose li {
+  margin-bottom: 0.6rem;
+  color: #445566;
+  line-height: 1.65;
+}
+
+.why-choose:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 46px rgba(6, 22, 37, 0.10);
+}
+
+@media (max-width: 980px) {
+  .why-choose { padding: 1.25rem; border-radius: 12px; }
+}
+.contact {
+  padding: 3rem 2rem;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.contact h1 {
+  font-size: 2rem;
+  color: #0f172a;
+}
+
+.contact p {
+  color: #334155;
+  margin-top: 0.5rem;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  width: 300px;
+  text-align: left;
+}
+
+.contact-info h2 {
+  color: #0ea5e9;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  color: #1e293b;
+  line-height: 1.8;
+}
+
+.contact-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  width: 400px;
+  text-align: left;
+}
+
+.contact-form h2 {
+  color: #0ea5e9;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+  background: #f1f5f9;
+}
+
+.btn-primary {
+  background: #0ea5e9;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Make Country/Currency selects match the Net Monthly Income input styling */
+.budget-card.income label {
+  display: block;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0.6rem 0 0.35rem;
+}
+
+.budget-card.income select,
+.budget-card.income input[type="number"] {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #fbfdff;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.18s ease;
+}
+
+.budget-card.income select:focus,
+.budget-card.income input[type="number"]:focus {
+  border-color: #0ea5e9;
+  box-shadow: 0 8px 26px rgba(14,165,233,0.08);
+  outline: none;
+}
+
+/* small responsive tweak to keep selects stacked nicely */
+@media (max-width: 480px) {
+  .budget-card.income select,
+  .budget-card.income input[type="number"] {
+    padding: 0.75rem;
+  }
+}
+
+/* Budget page heading icon styling */
+.budget h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.budget .budget-icon {
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff6e6, #ffeccf);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+  font-size: 1.6rem;
+  color: #4b2b00;
+}
+.budget .budget-title { font-weight: 700; color: #0f172a; }
+@media (max-width: 480px){
+  .budget h1{ gap: 0.5rem; }
+  .budget .budget-icon { width: 48px; height: 48px; font-size: 1.25rem; border-radius: 10px; }
+}
+
+/* Expense Options */
+.expense-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.expense-options label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #1e293b;
+  background: #f8fafc;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.expense-options label:hover {
+  background: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+.expense-options input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0ea5e9;
+}
+
+/* Expense Item */
+.expense-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.12s ease;
+}
+.expense-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0ea5e9;
+  margin: 0;
+}
+.expense-item .expense-label {
+  font-size: 1rem;
+  color: #1e293b;
+}
+.expense-item:hover {
+  background: #eaf4ff;
+  transform: translateY(-2px);
+}
+
+/* Unified card styling: give a consistent border-radius and padding to main content containers */
+/* Targets common 'card' and 'box' elements across the site so each section looks cohesive */
+.payment-info,
+.payment-form,
+.planner-form,
+.ai-results,
+.budget-card,
+.about-card,
+.why-choose,
+.contact-info,
+.contact-form,
+.converter-box,
+.feature,
+.expense-item,
+.expense-options label,
+.hero-image img {
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+
+.payment-form,
+.payment-info,
+.budget-card,
+.about-card,
+.contact-form,
+.contact-info,
+.converter-box,
+.planner-form,
+.ai-results {
+  padding: 1.6rem; 
+  border-radius: 14px; 
+}
+
+/* Remove padding from image elements so they don't get extra whitespace */
+.payment-image,
+.hero-image img,
+.about-card .icon img {
+  padding: 0;
+}
+
+/* Keep buttons and inputs sizing unaffected but ensure clickable areas remain roomy */
+.payment-form .btn-primary,
+.payment-card .btn-primary,
+.budget-card .btn-primary,
+.btn-primary {
+  padding: 0.9rem 1rem;
+}
+
+/* Responsive: slightly reduce padding on small screens to preserve layout */
+@media (max-width: 480px) {
+  .payment-form,
+  .payment-info,
+  .budget-card,
+  .about-card,
+  .contact-form,
+  .contact-info,
+  .converter-box,
+  .planner-form,
+  .ai-results,
+  .feature {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+}
