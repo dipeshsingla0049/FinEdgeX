@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Investment</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+</head>
+<body>
+     <header class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="FinEdgeX">
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="converter.html">Currency Converter</a>
+            <a href="payment.html">Payments</a>
+            <a href="budget.html">Budget Planner</a>
+            <a href="investment.html">Investment</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a> 
+        </nav>
+        <button class="btn-login" onclick="window.location.href='login.html'">Login</button>
+    </header>
+    <section class="investment">
+    <h1><span class="section-icon" aria-hidden="true">📈</span><span class="section-title">Smart Investment Planner</span></h1>
+    <p>Plan and grow your wealth intelligently with AI-driven recommendations.</p>
+
+    <div class="investment-container">
+      <!-- Input Form -->
+      <div class="planner-form">
+        <h3>Enter Your Financial Details</h3>
+        <form id="investmentForm">
+          <label>Net Income</label>
+          <input type="number" id="income" placeholder="Enter amount" required>
+
+          <label>Income Type</label>
+          <select id="incomeType" required>
+            <option value="monthly">Monthly</option>
+            <option value="quarterly">Quarterly</option>
+            <option value="annual">Annual</option>
+          </select>
+
+          <label>Currency</label>
+          <select id="currency" required>
+            <option value="USD">USD - US Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - Pound Sterling</option>
+            <option value="INR">INR - Indian Rupee</option>
+            <option value="JPY">JPY - Japanese Yen</option>
+          </select>
+
+          <button type="submit" class="btn-primary">Get AI Investment Plan</button>
+        </form>
+      </div>
+      <div class="ai-results">
+        <h3>💡Suggested Investment Plan</h3>
+        <textarea id="aiPlan" class="ai-plan-textarea" rows="8" readonly placeholder="AI-generated plan will appear here...">Enter your details and click the button above to get a personalized plan.</textarea>
+        
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+        <div class="footer-content">
+         <div>
+            <h3>FinEdgeX</h3>
+            <p>Smart Finance, Simplified Finance.</p>
+         </div>  
+         <div>
+            <h4>Contact</h4>
+            <p >Email:
+                <a href="mailto:info@finedgex.com" id="email">info@finedgex.com</a>
+            </p>
+            <p>Phone: +1 (555) 123-4567</p>
+         </div>
+         </div>
+        <p class="footer-note">© 2025 FinEdgeX. All rights reserved.</p>
+    </footer>
+</body>
+</html>
