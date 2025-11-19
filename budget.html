@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Investment</title>
+    <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+     <link rel="icon" type="image/jpeg" href="logo.jpeg">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="FinEdgeX">
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="converter.html">Currency Converter</a>
+            <a href="payment.html">Payments</a>
+            <a href="budget.html">Budget Planner</a>
+            <a href="investment.html">Investment</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a> 
+        </nav>
+        <button class="btn-login" onclick="window.location.href='login.html'">Login</button>
+    </header>    
+    <section class="budget">
+    <h1><span class="budget-icon" aria-hidden="true">📊</span><span class="budget-title">Budget Planner</span></h1>
+    <p id="budget-description">Track your income, expenses, and savings goals — all in one place.</p>
+
+    <div class="budget-container">
+  <div class="budget-card income">
+    <h2>💰 Monthly Income</h2>
+    <p>Enter your total monthly earnings below.</p>
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="US">United States</option>
+      <option value="IN">India</option>
+      <option value="GB">United Kingdom</option>
+      <option value="CA">Canada</option>
+      <option value="AU">Australia</option>
+      <option value="DE">Germany</option>
+      <option value="FR">France</option>
+      <option value="JP">Japan</option>
+      <option value="CN">China</option>
+      <option value="OTHER">Other</option>
+    </select>
+
+    <label for="currency">Currency</label>
+    <select id="currency" name="currency">
+      <option value="USD">USD - US Dollar</option>
+      <option value="EUR">EUR - Euro</option>
+      <option value="GBP">GBP - Pound Sterling</option>
+      <option value="INR">INR - Indian Rupee</option>
+      <option value="JPY">JPY - Japanese Yen</option>
+    </select>
+
+    <label for="income">Net Monthly Income</label>
+    <input type="number" id="income" placeholder="e.g. 5000">
+  </div>
+
+  <div class="budget-card expenses">
+    <h2>💸 Monthly Expenses</h2>
+    <p>Select your major spending categories:</p>
+    <div class="expense-options"> 
+      <label class="expense-item"><input type="checkbox" value="Rent / Mortgage"><span class="expense-label">🏠 Rent / Mortgage</span></label>
+      <label class="expense-item"><input type="checkbox" value="Food & Dining"><span class="expense-label">🍔 Food & Dining</span></label>
+      <label class="expense-item"><input type="checkbox" value="Transportation"><span class="expense-label">🚗 Transportation</span></label>
+      <label class="expense-item"><input type="checkbox" value="Utilities & Bills"><span class="expense-label">💡 Utilities & Bills</span></label>
+      <label class="expense-item"><input type="checkbox" value="Education / Other"><span class="expense-label">🎓 Education / Other</span></label>
+
+    </div>
+  </div>
+
+  <div class="budget-card ai-plan">
+    <h2>🤖 AI-Generated Budget Plan</h2>
+    <p>Your personalized budget suggestion will appear here.</p>
+    <textarea id="aiPlan" rows="6" placeholder="AI-generated recommendations will be shown here..." readonly></textarea>
+    <button class="btn-generate">Generate Plan</button>
+  </div>
+</div>
+</section>
+
+    <footer class="footer">
+        <div class="footer-content" id="budget-footer">
+         <div>
+            <h3>FinEdgeX</h3>
+            <p>Smart Finance, Simplified Finance.</p>
+         </div>  
+         <div>
+            <h4>Contact</h4>
+            <p >Email:
+                <a href="mailto:info@finedgex.com" id="email">info@finedgex.com</a>
+            </p>
+            <p>Phone: +1 (555) 123-4567</p>
+         </div>
+         </div>
+        <p class="footer-note">© 2025 FinEdgeX. All rights reserved.</p>
+    </footer>
+</body>
+</html>
