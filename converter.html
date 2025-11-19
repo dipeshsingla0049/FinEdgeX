@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinEdgeX - Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+</head>
+<body>
+     <header class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="FinEdgeX">
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="converter.html">Currency Converter</a>
+            <a href="payment.html">Payments</a>
+            <a href="budget.html">Budget Planner</a>
+            <a href="investment.html">Investment</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a> 
+        </nav>
+        <button class="btn-login" onclick="window.location.href='login.html'">Login</button>
+    </header>
+    <section class="converter">
+        <h1>Currency Converter</h1>
+        <p>Convert between world currencies quickly and easily.</p>
+        <div class="converter-box">
+            <div class="input-group">
+                <label for="fromCurrency">From Currency</label>
+                <select id="fromCurrency">
+                <option>USD - US Dollar</option>
+                <option>EUR - Euro</option>
+                <option>GBP - British Pound</option>
+                <option>INR - Indian Rupee</option>
+                <option>JPY - Japanese Yen</option>
+                <option>AUD - Australian Dollar</option>
+                </select>
+                <input type="number" placeholder="Enter amount">
+            </div>
+
+            <div class="input-group">
+                <label for="toCurrency">To Currency</label>
+                <select id="toCurrency">
+                <option>EUR - Euro</option>
+                <option>USD - US Dollar</option>
+                <option>GBP - British Pound</option>
+                <option>INR - Indian Rupee</option>
+                <option>JPY - Japanese Yen</option>
+                <option>AUD - Australian Dollar</option>
+                </select>
+                <input type="number" placeholder="Converted amount" disabled>
+            </div>
+            <button class="btn-primary">Convert</button>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+         <div>
+            <h3>FinEdgeX</h3>
+            <p>Smart Finance, Simplified Finance.</p>
+         </div>  
+         <div>
+            <h4>Contact</h4>
+            <p >Email:
+                <a href="mailto:info@finedgex.com" id="email">info@finedgex.com</a>
+            </p>
+            <p>Phone: +1 (555) 123-4567</p>
+         </div>
+         </div>
+        <p class="footer-note">© 2025 FinEdgeX. All rights reserved.</p>
+    </footer>
+</body>
+</html>
