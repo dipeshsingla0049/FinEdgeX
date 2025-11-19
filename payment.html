@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinEdgeX - Payments</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+</head>
+<style>
+.payment-form h4 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  padding: 8px 14px;
+  background: rgba(14,165,233,0.08);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* FORM LAYOUT */
+.payment-form label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.payment-form input,
+.payment-form select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 8px;
+  background: #ffffff;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+/* Focused input effect */
+.payment-form input:focus,
+.payment-form select:focus {
+  border-color: #0ea5e9;
+  box-shadow: 0 0 6px rgba(14,165,233,0.25);
+  outline: none;
+}
+
+/* Card details in two columns */
+.card-details {
+  display: flex;
+  gap: 1rem;
+}
+
+.card-details div {
+  flex: 1;
+}
+
+/* BUTTON */
+.payment-form .btn-primary {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #0ea5e9, #10b981);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.payment-form .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(14,165,233,0.25);
+}
+
+/* STATUS MESSAGE */
+.status-message {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 12px;
+  display: none;
+  border-radius: 8px;
+}
+
+.status-success {
+  background: rgba(16,185,129,0.12);
+  color: #059669;
+}
+
+.status-error {
+  background: rgba(239,68,68,0.12);
+  color: #dc2626;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 480px) {
+  .card-details {
+    flex-direction: column;
+  }
+
+  .payment-form {
+    padding: 1.5rem;
+  }
+}
+
+</style>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="FinEdgeX">
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="converter.html">Currency Converter</a>
+            <a href="payment.html">Payments</a>
+            <a href="budget.html">Budget Planner</a>
+            <a href="investment.html">Investment</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a> 
+        </nav>
+        <button class="btn-login" onclick="window.location.href='login.html'">Login</button>
+    </header>
+    <section class="payments">
+        <h1>💳 Secure Payment Gateway</h1>
+        <p>Send and receive payments across the globe with confidence.</p>
+        <div class="payment-container">
+            <div class="payment-info">
+                <h2>Why choose FinEdgeX?</h2>
+                <p>We offer a seamless and secure payment experience with competitive rates and 24/7 customer support.</p>
+                <ul>
+                    <li>🔒 End-to-end encryption for all transactions</li>
+                    <li>🌍 Multi-currency support</li>
+                    <li>⚡ Fast transaction processing</li>
+                    <li>💼 Business and personal accounts</li>
+                </ul>
+                <img src="payment.png" alt="Secure payment illustration" class="payment-image">
+
+            </div>
+
+        <div class="payment-form">
+        <h3>Make a Payment</h3>
+        <form id="paymentForm">
+          <!-- Sender Details -->
+          <h4>Sender Details</h4>
+          <label>Full Name</label>
+          <input type="text" id="senderName" placeholder="John Doe" required>
+
+          <label>Email</label>
+          <input type="email" id="senderEmail" placeholder="you@example.com" required>
+
+          <label>Phone Number</label>
+          <input type="tel" id="senderPhone" placeholder="+1 555 234 5678" required>
+
+          <!-- Card Details -->
+          <h4>Card Information</h4>
+          <label>Card Number</label>
+          <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+
+          <div class="card-details">
+            <div>
+              <label>Expiry Date</label>
+              <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5" required>
+            </div>
+            <div>
+              <label>CVV</label>
+              <input type="password" id="cvv" placeholder="123" maxlength="4" required>
+            </div>
+          </div>
+
+          <!-- Receiver Details -->
+          <h4>Receiver Details</h4>
+          <label>Recipient Name</label>
+          <input type="text" id="receiverName" placeholder="Jane Smith" required>
+          <label>Receiver Email</label>
+          <input type="email" id="receiverEmail" placeholder="jane@example.com" required>
+          <label>Receiver Account / Wallet ID</label>
+          <input type="text" id="receiverAccount" placeholder="e.g., jane@paypal.com or Bank A/C Number" required>
+          <h4>Payment Information</h4>
+          <label>Amount</label>
+          <input type="number" id="amount" placeholder="Enter amount" required>
+
+          <label>Currency</label>
+          <select id="currency" required>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="INR">INR</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+          </select>
+
+          <label>Payment Method</label>
+          <select id="paymentMethod" required>
+            <option>Credit Card</option>
+            <option>Debit Card</option>
+            <option>PayPal</option>
+            <option>Bank Transfer</option>
+          </select>
+
+          <button class="btn-primary" type="submit">Proceed to Pay</button>
+        </form>
+
+        <!-- Placeholder for payment response -->
+        <div id="paymentStatus" class="status-message"></div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+        <div class="footer-content">
+         <div>
+            <h3>FinEdgeX</h3>
+            <p>Smart Finance, Simplified Finance.</p>
+         </div>  
+         <div>
+            <h4>Contact</h4>
+            <p >Email:
+                <a href="mailto:info@finedgex.com" id="email">info@finedgex.com</a>
+            </p>
+            <p>Phone: +1 (555) 123-4567</p>
+         </div>
+         </div>
+        <p class="footer-note">© 2025 FinEdgeX. All rights reserved.</p>
+    </footer>
+</body>
+</html>
