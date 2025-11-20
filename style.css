@@ -203,7 +203,6 @@ body {
   color: #334155;
 }
 
-/* Full-screen background image for payments section */
 .payments {
   position: relative;
   overflow: visible;
@@ -212,18 +211,18 @@ body {
 .payments::before {
   content: "";
   position: fixed;
-  inset: 0; /* cover entire viewport */
+  inset: 0; 
   background-image: url('payment.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  opacity: 0.18; /* adjust visibility */
+  opacity: 0.18;
   pointer-events: none;
   z-index: 0;
   transform: translateZ(0);
 }
 
-/* subtle overlay above the bg image for legibility */
+
 .payments::after {
   content: "";
   position: fixed;
@@ -233,16 +232,11 @@ body {
   pointer-events: none;
 }
 
-/* Keep payments content and navbar above the background */
+
 .payments > * { position: relative; z-index: 2; }
 .navbar { position: relative; z-index: 3; }
-
-/* Hide inline image so it doesn't duplicate the background */
 .payment-info .payment-image { display: none !important; }
-
-/* Payments — visual polish (scoped to .payments only) */
 .payments::after {
-  /* subtle overlay between background image and content for legibility */
   content: "";
   position: fixed;
   inset: 0;
@@ -262,10 +256,8 @@ body {
   background: rgba(255,255,255,0.78);
   border: 1px solid rgba(255,255,255,0.6);
   backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
 }
 
-/* Slight lift animation for cards */
 .payment-info, .payment-form {
   transform: translateY(6px);
   opacity: 0;
@@ -274,8 +266,6 @@ body {
 @keyframes paymentsFloatIn {
   to { transform: translateY(0); opacity: 1; }
 }
-
-/* Tighter list items with icon badges */
 .payment-info ul { display: grid; gap: 0.6rem; grid-template-columns: 1fr; }
 .payment-info li {
   display: flex;
@@ -284,7 +274,7 @@ body {
   padding: 0.45rem 0;
 }
 .payment-info li::before {
-  content: ""; /* small circular accent */
+  content: ""; 
   width: 10px;
   height: 10px;
   margin-top: 6px;
@@ -292,8 +282,6 @@ body {
   border-radius: 50%;
   display: inline-block;
 }
-
-/* Make form sections visually grouped */
 .payment-form h4 {
   background: linear-gradient(90deg, rgba(14,165,233,0.06), rgba(16,185,129,0.03));
   display: inline-block;
@@ -304,22 +292,19 @@ body {
   margin-bottom: 0.6rem;
 }
 
-/* Make labels slightly lighter and inputs more pronounced */
 .payment-form label { color: #0f172a; opacity: 0.85; }
 .payment-form input, .payment-form select { border-color: rgba(6, 24, 43, 0.06); }
 
-/* CTA: stronger subtle glow */
 .payment-form .btn-primary {
   box-shadow: 0 18px 44px rgba(14,165,233,0.12), 0 4px 12px rgba(16,185,129,0.06);
 }
 
-/* Reduce background prominence on small devices so content stays readable */
 @media (max-width: 700px) {
   .payments::before { opacity: 0.12; background-position: center top; background-size: cover; }
   .payments::after { background: linear-gradient(180deg, rgba(6,18,36,0.28), rgba(255,255,255,0.06)); }
 }
 
-/* Layout */
+
 .payment-container {
   display: flex;
   justify-content: space-between;
@@ -332,24 +317,22 @@ body {
 .payments .why-choose {
   width: 92%;
   max-width: 1100px;
-  margin: 0 auto 1.75rem auto; /* center and add space below */
+  margin: 0 auto 1.75rem auto; 
   box-sizing: border-box;
 }
 
-/* Center the payment container and keep it aligned under the why-choose card */
 .payments .payment-container {
   width: 92%;
   max-width: 1100px;
   margin: 0 auto 2.5rem auto;
   box-sizing: border-box;
-  /* keep existing layout but ensure children align nicely */
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
 }
 
-/* Make the form stack full-width under the info section on small screens */
+
 @media (max-width: 980px) {
   .payments .payment-container {
     flex-direction: column;
@@ -361,10 +344,99 @@ body {
   }
 }
 
-/* Small visual spacing adjustment so the why-choose card doesn't overlap the fixed background overlay */
 .payments .why-choose { position: relative; z-index: 2; }
+payment-form h4 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  padding: 8px 14px;
+  background: rgba(14,165,233,0.08);
+  border-radius: 8px;
+  display: inline-block;
+}
 
-/* ...existing code... */
+.payment-form label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.payment-form input,
+.payment-form select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 8px;
+  background: #ffffff;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.payment-form input:focus,
+.payment-form select:focus {
+  border-color: #0ea5e9;
+  box-shadow: 0 0 6px rgba(14,165,233,0.25);
+  outline: none;
+}
+
+.card-details {
+  display: flex;
+  gap: 1rem;
+}
+
+.card-details div {
+  flex: 1;
+}
+.payment-form .btn-primary {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #0ea5e9, #10b981);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.payment-form .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(14,165,233,0.25);
+}
+.status-message {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 12px;
+  display: none;
+  border-radius: 8px;
+}
+
+.status-success {
+  background: rgba(16,185,129,0.12);
+  color: #059669;
+}
+
+.status-error {
+  background: rgba(239,68,68,0.12);
+  color: #dc2626;
+}
+@media (max-width: 480px) {
+  .card-details {
+    flex-direction: column;
+  }
+
+  .payment-form {
+    padding: 1.5rem;
+  }
+}
 .investment {
   padding: 3rem 2rem;
   text-align: center;
@@ -380,7 +452,6 @@ body {
   color: #334155;
 }
 
-/* Styled section heading icon for investment page */
 .investment h1 {
   display: flex;
   align-items: center;
@@ -409,7 +480,6 @@ body {
   .investment .section-icon { width: 48px; height: 48px; font-size: 1.3rem; border-radius: 10px; }
 }
 
-/* Container */
 .investment-container {
   display: flex;
   justify-content: space-between;
@@ -418,8 +488,6 @@ body {
   gap: 2rem;
   margin-top: 2.5rem;
 }
-
-/* Form Section */
 .planner-form {
   flex: 1;
   min-width: 300px;
@@ -475,7 +543,6 @@ body {
   background: #0284c7;
 }
 
-/* AI Results Section */
 .ai-results {
   flex: 1;
   min-width: 320px;
@@ -503,7 +570,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Header */
 .budget h1 {
   font-size: 2.2rem;
   color: #0f172a;
@@ -516,7 +582,6 @@ body {
   margin-bottom: 2.5rem;
 }
 
-/* Layout Container */
 .budget-container {
   display: flex;
   justify-content: center;
@@ -527,7 +592,6 @@ body {
   margin: 0 auto;
 }
 
-/* Common Card Style */
 .budget-card {
   background: #ffffff;
   border-radius: 16px;
@@ -544,7 +608,6 @@ body {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* Section-specific colors */
 .income {
   border-top-color: #0ea5e9;
 }
@@ -557,7 +620,6 @@ body {
   border-top-color: #10b981;
 }
 
-/* Titles */
 .budget-card h2 {
   color: #0f172a;
   font-size: 1.4rem;
@@ -571,7 +633,6 @@ body {
   line-height: 1.5;
 }
 
-/* Inputs */
 .budget-card input[type="number"] {
   width: 100%;
   padding: 0.9rem;
@@ -586,7 +647,6 @@ body {
   outline: none;
 }
 
-/* Expense Options */
 .expense-options {
   display: flex;
   flex-direction: column;
@@ -615,7 +675,7 @@ body {
   accent-color: #0ea5e9;
 }
 
-/* AI Generated Plan Box */
+
 .ai-plan textarea {
   width: 100%;
   padding: 1rem;
@@ -635,7 +695,6 @@ body {
   outline: none;
 }
 
-/* New textarea for AI plan (read-only look) */
 .ai-plan-textarea {
   width: 100%;
   padding: 1rem;
@@ -656,7 +715,6 @@ body {
   opacity: 1; 
 }
 
-/* Button */
 .btn-generate {
   display: inline-block;
   width: 100%;
@@ -676,7 +734,6 @@ body {
   opacity: 0.9;
 }
 
-/* Enhanced About page styles to match 1.png / 2.png */
 .about{
   padding: 4rem 1rem;
   background: linear-gradient(180deg, #f7fbff 0%, #ffffff 60%);
@@ -697,7 +754,6 @@ body {
   margin-right: auto;
 }
 
-/* Grid container for the cards */
 .about-grid {
   width: 92%;
   max-width: 1100px;
@@ -795,11 +851,10 @@ body {
   color: #053826;
 }
 
-/* Optional: make icon text slightly bolder for clarity */
 .about-card .icon { font-weight: 700; }
-/* Make the "Why Choose" section match the About cards visually */
+
 .why-choose {
-  /* use same card look as .about-card */
+
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -929,7 +984,6 @@ body {
   opacity: 0.7;
 }
 
-/* Make Country/Currency selects match the Net Monthly Income input styling */
 .budget-card.income label {
   display: block;
   font-weight: 600;
@@ -955,7 +1009,6 @@ body {
   outline: none;
 }
 
-/* small responsive tweak to keep selects stacked nicely */
 @media (max-width: 480px) {
   .budget-card.income select,
   .budget-card.income input[type="number"] {
@@ -963,7 +1016,6 @@ body {
   }
 }
 
-/* Budget page heading icon styling */
 .budget h1 {
   display: flex;
   align-items: center;
@@ -988,7 +1040,6 @@ body {
   .budget .budget-icon { width: 48px; height: 48px; font-size: 1.25rem; border-radius: 10px; }
 }
 
-/* Expense Options */
 .expense-options {
   display: flex;
   flex-direction: column;
@@ -1017,7 +1068,6 @@ body {
   accent-color: #0ea5e9;
 }
 
-/* Expense Item */
 .expense-item {
   display: flex;
   align-items: center;
@@ -1045,8 +1095,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Unified card styling: give a consistent border-radius and padding to main content containers */
-/* Targets common 'card' and 'box' elements across the site so each section looks cohesive */
 .payment-info,
 .payment-form,
 .planner-form,
@@ -1079,14 +1127,12 @@ body {
   border-radius: 14px; 
 }
 
-/* Remove padding from image elements so they don't get extra whitespace */
 .payment-image,
 .hero-image img,
 .about-card .icon img {
   padding: 0;
 }
 
-/* Keep buttons and inputs sizing unaffected but ensure clickable areas remain roomy */
 .payment-form .btn-primary,
 .payment-card .btn-primary,
 .budget-card .btn-primary,
@@ -1094,7 +1140,6 @@ body {
   padding: 0.9rem 1rem;
 }
 
-/* Responsive: slightly reduce padding on small screens to preserve layout */
 @media (max-width: 480px) {
   .payment-form,
   .payment-info,
